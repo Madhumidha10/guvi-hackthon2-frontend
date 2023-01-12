@@ -1,0 +1,20 @@
+$.fn.wrapFirst = function (numberOfWords) {
+    var node = this.contents().filter(function () { 
+            return this.nodeType == 3 
+        }).first(),
+        text = node.text(),
+        first = text.split(" ", numberOfWords).join(" ");
+
+    if (!node.length)
+        return;
+
+    node[0].nodeValue = text.slice(first.length);
+    node.before('<span>' + first + '</span>');
+};
+
+
+
+
+
+
+
