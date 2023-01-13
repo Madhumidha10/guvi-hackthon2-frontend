@@ -23,7 +23,7 @@ export const getEquipmentsByCount = async () => {
 
 export const getEquipment = async (id) => {
   const config={headers:{"Content-Type":"application/json"}}
-  const res = await axios.get(`/api/equipment/${id}`);
+  const res = await axios.get(`https://guvi-hackthon2-backend.vercel.app/api/equipment/${id}`);
   return res;
 };
 export const updateEquipment = async (id,formData) => {
@@ -33,7 +33,7 @@ export const updateEquipment = async (id,formData) => {
     },
   };
   
-  const res = await axios.put(`/api/equipment/${id}`,formData,config);
+  const res = await axios.put(`https://guvi-hackthon2-backend.vercel.app/api/equipment/${id}`,formData,config);
   return res;
 };
 
